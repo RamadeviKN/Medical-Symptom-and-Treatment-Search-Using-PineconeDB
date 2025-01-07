@@ -51,12 +51,48 @@ PINECONE_API_KEY=<Your Pinecone API Key>
 PINECONE_ENV="gcp-starter"
 PINECONE_INDEX_NAME=<Your Index Name inside double quotes>
 
-# Step 5: Run the Application
+# Step 5: Prepare the Data
+Ensure all data extracts (CSV files) are placed inside the /data folder.
+1. disease_symptoms.csv
+2. symptom_description.csv
+3. symptom_precaution.csv
+4. symptom_severity.csv
 
-cd src
+# Step 6: Perform Exploratory Data Analysis (EDA)
+Open and run the notebook /src/data_preprocessing.ipynb.
+
+This step will:
+1. Concatenate the CSV files in the /data folder.
+2. Clean and explore data with missing values
+3. Generate a combined preprocessed file: preprocessed_symptom_dataset.csv.
+
+# Step 7: Generate Embeddings
+Open and run the notebook /src/embedding_generation.ipynb.
+
+This step will:
+1. Generate embeddings from the data in preprocessed_symptom_dataset.csv.
+2. Save the embeddings to symptom_embeddings.pkl inside the /embeddings folder.
+
+# Step 8: Upsert Data into Pinecone Database
+Run the script /src/data_upsertion.py.
+
+This step will:
+1. Create a Pinecone index named medical-symptoms-index.
+2. Insert data on diseases, symptoms, and precautions into the index.
+Note:
+1. Log in to Pinecone and navigate to the Database/Indexes section to validate the created index.
+2. An API key is required to perform this step.
+
+# Step 9: Launch the Streamlit App
+After completing the above steps and validating the index in Pinecone Database, navigate to the /src folder.
+Run the following command:
+
 streamlit run app.py
-
 Open the URL provided in the terminal (default: http://localhost:8501) in your web browser.
+
+This will load the user interface. You can:
+1. Query the database using a disease or symptom.
+2. Retrieve semantically similar results powered by the vector database, showcasing the advantage of storing high-dimensional data in vector form.
 
 # Usage
 Search by Disease or Symptom: Select a disease or symptom (e.g., "fever") in the input box and press Search button.
@@ -78,6 +114,9 @@ SentenceTransformer: To encode disease and symptom descriptions into embeddings.
 # Demo
 To see how the application works, check out the demo video inside the repo folder "demo":  
 [Download Demo Video](demo/medical-symptom-and-treatment-srarch-using-pineconedb-video.mp4) 
+
+Pinecone Database Index View:
+[Download Demo Video](demo/pinecone-database-index-view.mp4) 
 
 # License
 This project is licensed under the MIT License. See the LICENSE file for more details.
