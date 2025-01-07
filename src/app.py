@@ -47,10 +47,12 @@ if query_type in ["Disease" , "Symptom"]:
         if search_results:
             # Capitalize each word in the disease names
             capitalized_search_results = [search_result.title() for search_result in search_results]
+            # Sort the list alphabetically
+            sorted_search_results = sorted(capitalized_search_results)
             if search_results and query_type == "Disease":  # Ensure there are diseases to show
-                choice_value = st.selectbox("Select Disease", ["Select Disease"] + capitalized_search_results)
+                choice_value = st.selectbox("Select Disease", ["Select Disease"] + sorted_search_results)
             if search_results and query_type == "Symptom":  # Ensure there are diseases to show
-                choice_value = st.selectbox("Select Symptom", ["Select Symptom"] + capitalized_search_results)
+                choice_value = st.selectbox("Select Symptom", ["Select Symptom"] + sorted_search_results)
             if choice_value != "Select Disease" or choice_value != "Select Symptom":
                 st.write(f"You selected : {choice_value}")
         else:
