@@ -31,8 +31,8 @@ A Pinecone account and API key
 Git installed on your machine
 
 # Step 1: Clone the Repository
-git clone https://github.com/your-username/Medical-Symptom-Treatment-Search.git
-cd Medical-Symptom-Treatment-Search
+git clone [https://github.com/your-username/Medical-Symptom-Treatment-Search.git](https://github.com/RamadeviKN/Medical-Symptom-and-Treatment-Search-Using-PineconeDB.git)
+cd Medical-Symptom-Treatment-Search-Using-PineconeDB
 
 # Step 2: Set Up Virtual Environment
 python -m venv .venv
