@@ -118,6 +118,14 @@ To see how the application works, check out the demo video inside the repo folde
 Pinecone Database Index View:
 [Download Demo Video](demo/pinecone-database-index-view.mp4) 
 
+![image](https://github.com/user-attachments/assets/1b92b375-b5dc-4c28-8507-e1016a1b38d4)
+
+![image](https://github.com/user-attachments/assets/7c58ce66-c8a5-46f2-9dc6-af97d548c2fd)
+
+![image](https://github.com/user-attachments/assets/942d3446-279d-46ba-99fc-d23f81786a60)
+
+![image](https://github.com/user-attachments/assets/6d4aab50-6a71-4d91-be2a-6f8013434ab5)
+
 # License
 This project is licensed under the MIT License. See the LICENSE file for more details.
 
